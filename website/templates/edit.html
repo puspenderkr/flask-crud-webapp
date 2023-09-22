@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Edit Task{% endblock %}
+{% block content %}
+<h1>Edit Task</h1>
+<form method="POST" action="{{ url_for('views.update_task', task_id=task.id) }}">
+    <div class="form-group">
+        <label for="data">Task Data</label>
+        <textarea name="data" id="data" class="form-control">{{ task.data }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Task</button>
+</form>
+{% endblock %}
